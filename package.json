@@ -1,0 +1,15 @@
+{
+  "name": "website-crudfb",
+  "version": "1.0.0",
+  "description": "frontend application developed in vanilla javascript (pure javascript).",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
+}
