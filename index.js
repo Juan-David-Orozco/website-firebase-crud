@@ -15,12 +15,14 @@ window.addEventListener('DOMContentLoaded', async () => {
       const task = doc.data()
       tasksContainer.innerHTML += `
         <div class="card card-body my-2" >
-          <h3 class="h5">${task.title}</h3>
-          <p>${task.description}</p>
-          <div class="d-flex">
-            <button class='btn btn-info btn-delete m-1' data-id="${doc.id}">Delete</button>
-            <button class='btn btn-success btn-edit m-1' data-id="${doc.id}">Edit</button>
+          <div class="d-flex justify-content-between">
+            <p class="h3 text-info">${task.title}</p>
+            <div class="d-flex">
+              <button class='btn btn-danger btn-sm btn-delete m-1' data-id="${doc.id}">Delete</button>
+              <button class='btn btn-dark btn-sm btn-edit m-1' data-id="${doc.id}">Edit</button>
+            </div>
           </div>
+          <p class="text-dark my-2 p-2">${task.description}</p>
         </div>
       `
     })
@@ -43,6 +45,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         editStatus = true
         taskId = doc.id
         taskForm['btn-task-save'].innerHTML = "Update"
+        taskForm['btn-task-save'].setAttribute("class", "btn btn-success")
       })
     })
 
@@ -59,6 +62,7 @@ taskForm.addEventListener('submit', (e) => {
     updateTask(taskId, {title: title.value, description: description.value})
     editStatus = false
     taskForm['btn-task-save'].innerHTML = "Save"
+    taskForm['btn-task-save'].setAttribute("class", "btn btn-info")
   } else {
     if(title.value !== "" && description.value !== ""){
       saveTask(title.value, description.value)

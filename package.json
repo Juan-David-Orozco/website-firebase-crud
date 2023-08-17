@@ -1,5 +1,5 @@
 {
-  "name": "website-crudfb",
+  "name": "website-firebase-crud",
   "version": "1.0.0",
   "description": "frontend application developed in vanilla javascript (pure javascript).",
   "main": "index.js",
